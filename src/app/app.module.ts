@@ -6,12 +6,7 @@ import { DosComponent } from './prueba/dos.component';
 import { APP_ROUTING } from './routes.routing';
 import { FormsModule } from '@angular/forms';
 import { Servicio1Service } from './services/servicio1.service';
-
-
-
-
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +17,8 @@ import { Servicio1Service } from './services/servicio1.service';
   imports: [
     BrowserModule,
     APP_ROUTING,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [Servicio1Service],
   bootstrap: [AppComponent],
