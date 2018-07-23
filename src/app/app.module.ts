@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { UnoComponent } from './prueba/uno.component';
 import { DosComponent } from './prueba/dos.component';
 import { APP_ROUTING } from './routes.routing';
+import { FormsModule } from '@angular/forms';
+import { Servicio1Service } from './services/servicio1.service';
 
 
 
@@ -19,9 +21,11 @@ import { APP_ROUTING } from './routes.routing';
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [Servicio1Service],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

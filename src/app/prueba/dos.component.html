@@ -1,12 +1,11 @@
-<form>
+<form (ngSubmit)="guardar()" #martin="ngForm">
     <div class="row">
         <div class="col">
-            <input type="text" class="form-control" placeholder="First name">
+            <input [(ngModel)]="deporte.nombre" name="nombre" required type="text" class="form-control" placeholder="First name">
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="Last name">
+            <input [(ngModel)]="deporte.anio" name="anio" required class="form-control" placeholder="Last name">
         </div>
     </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">regresar</button>
 </form>
-
-<button type="button" class="btn btn-primary" [routerLink]="['/1']">regresar</button>
