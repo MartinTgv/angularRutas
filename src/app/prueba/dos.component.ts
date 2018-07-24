@@ -29,6 +29,18 @@ constructor(private Martin1:Servicio1Service ) {
   console.log ("hola estoy en el constructor");
 }
 
+actualizar(){
+  console.log(this.deporte.nombre);
+  this.Martin1.nuevoDeporte( this.deporte).subscribe( data => {
+     
+  });}
+
+  borrar(){
+    console.log(this.deporte.nombre);
+    this.Martin1.nuevoDeporte( this.deporte).subscribe( data => {
+       
+    });}
+
 ngOnInit() {};
   
 

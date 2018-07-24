@@ -7,6 +7,13 @@
             <input [(ngModel)]="deporte.anio" name="anio" required class="form-control" placeholder="Last name">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">regresar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">guardar</button>
+    <form (ngSubmit)="actualizar()" #martin="ngForm">
+        <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">update</button>
+    </form>
+    <form (ngSubmit)="borrar()" #martin="ngForm">
+        <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">borrar</button>
+    </form>
+
 </form>
 <!–- disabled button ng model name -–>

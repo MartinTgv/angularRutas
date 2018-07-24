@@ -11,9 +11,11 @@ import {map}from'rxjs/operators';
 export class Servicio1Service {
  
   urlFirebase:string="https://futbolhistoria-5dfeb.firebaseio.com/.json"
-
- constructor(private http: HttpClient) { }
- nuevoDeporte ( futbol: Futbol) {
+  urlFirebase2:string="https://console.firebase.google.com/project/futbolhistoria-5dfeb/database/futbolhistoria-5dfeb/data/-LICXPUXRqMTzW1WDT0G.json"
+ 
+  constructor(private http: HttpClient) { }
+ 
+  nuevoDeporte ( futbol: Futbol) {
   let body = JSON.stringify( futbol);
   let headers = new HttpHeaders ({
     'Content-Type': 'application/json'
@@ -25,9 +27,35 @@ export class Servicio1Service {
   }));
 }
 
+
+actualizar ( futbol: Futbol) {
+ let body = JSON.stringify( futbol);
+ let headers = new HttpHeaders ({
+   'Content-Type': 'application/json'
+ });
+
+ return this.http.put( this.urlFirebase2, body, {headers} ).pipe(map( res => {
+  console.log(res);
+  return res;
+}));
+
+ 
+
+
 }
 
-//PIPE . ((URL)) ,
+
+borrar(futbol:Futbol){
+  let body = JSON.stringify( futbol);
+  let headers = new HttpHeaders ({
+    'Content-Type': 'application/json'
+  });
  
- 
- 
+  return this.http.put( this.urlFirebase2, body, {headers} ).pipe(map( res => {
+   console.log(res);
+   return res;
+ }));
+
+}}
+
+//PIPE . ((URL)) 
