@@ -6,54 +6,18 @@
             <th scope="col">año</th>
         </tr>
 
-
-
     </thead>
-    <tbody>
+    <tbody *ngFor="let de of deportes">
         <tr>
-            <th scope="row">1</th>
-            <td></td>
-            <td></td>
-            <td></td>
+            <button type="button" class="btn btn-primary" [routerLink]="['/2']">ir a registro</button>
+            <td>{{de.anio}}</td>
+            <td>{{de.key}}</td>
+            <td>{{de.nombre}}</td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td></td>
-            <td></td>
-        </tr>
+    </tbody>
 
 
-        <tr>
-            <th scope="col">equipos-internacionales</th>
-            <th scope="col">nombre</th>
-            <th scope="col">año</th>
-        </tr>
-
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td></td>
-                <td></td>
-            </tr>
 
 
-        </tbody>
-
-        <button type="button" class="btn btn-primary" [routerLink]="['/2']">ir</button>
+    <button type="button" class="btn btn-primary" [routerLink]="['/2']">ir</button>
 </table>

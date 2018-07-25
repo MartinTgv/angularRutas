@@ -11,7 +11,9 @@ const APP_ROUTES: Routes = [
   { path:'1', component:UnoComponent},
  
   { path:'2',component:DosComponent },
- 
+
+  { path: '2/:id', component:DosComponent},
+  {path: '2/:key', component:DosComponent },
   {path:'**', pathMatch:'full' , redirectTo:'1'}
 
 ];

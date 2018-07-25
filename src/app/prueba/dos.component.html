@@ -8,12 +8,17 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">guardar</button>
-    <form (ngSubmit)="actualizar()" #martin="ngForm">
-        <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">update</button>
-    </form>
-    <form (ngSubmit)="borrar()" #martin="ngForm">
-        <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">borrar</button>
-    </form>
-
 </form>
+<form (ngSubmit)="actualizar()" #martin2="ngForm">
+    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">update</button>
+</form>
+<form (ngSubmit)="borrar()" #martin3="ngForm">
+    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">borrar</button>
+</form>
+
+<form (ngSubmit)="get1()" #martin4="ngForm">
+    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">get</button>
+</form>
+
+<button type="button" class="btn btn-primary" [routerLink]="['/1']">ir</button>
 <!–- disabled button ng model name -–>

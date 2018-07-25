@@ -11,8 +11,10 @@ import {map}from'rxjs/operators';
 export class Servicio1Service {
  
   urlFirebase:string="https://futbolhistoria-5dfeb.firebaseio.com/.json"
-  urlFirebase2:string="https://console.firebase.google.com/project/futbolhistoria-5dfeb/database/futbolhistoria-5dfeb/data/-LICXPUXRqMTzW1WDT0G.json"
- 
+  urlFirebase2:string="https://futbolhistoria-5dfeb.firebaseio.com/"
+  urlFirebase3:string="https://futbolhistoria-5dfeb.firebaseio.com/-LIGhbM3AA7EiyfjrgzB.json"
+  
+  
   constructor(private http: HttpClient) { }
  
   nuevoDeporte ( futbol: Futbol) {
@@ -28,13 +30,13 @@ export class Servicio1Service {
 }
 
 
-actualizar ( futbol: Futbol) {
+actualizar ( futbol: Futbol ,key:string) {
  let body = JSON.stringify( futbol);
  let headers = new HttpHeaders ({
    'Content-Type': 'application/json'
  });
 
- return this.http.put( this.urlFirebase2, body, {headers} ).pipe(map( res => {
+ return this.http.put( this.urlFirebase2+key+".json", body, {headers} ).pipe(map( res => {
   console.log(res);
   return res;
 }));
@@ -46,15 +48,33 @@ actualizar ( futbol: Futbol) {
 
 
 borrar(futbol:Futbol){
-  let body = JSON.stringify( futbol);
+  //let body = JSON.stringify( futbol);
   let headers = new HttpHeaders ({
     'Content-Type': 'application/json'
   });
  
-  return this.http.put( this.urlFirebase2, body, {headers} ).pipe(map( res => {
+  return this.http.delete( this.urlFirebase3, {headers} ).pipe(map( res => {
    console.log(res);
    return res;
  }));
+}
+ 
+
+
+getall(){
+ 
+  let headers = new HttpHeaders ({
+    'Content-Type': 'application/json'
+  });
+ 
+  return this.http.get( this.urlFirebase, {headers} ).pipe(map( res => {
+   
+   return res;
+ }));
+
+
+
+
 
 }}
 

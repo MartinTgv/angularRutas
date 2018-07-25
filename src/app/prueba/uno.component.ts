@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Futbol } from '../interfaces/interface';
+import { Servicio1Service } from '../services/servicio1.service';
 
 @Component({
   selector: 'app-uno',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnoComponent implements OnInit {
 
-  constructor() { }
+  deportes: Futbol[] = [];
+
+  constructor(private Martin1:Servicio1Service) { this.Martin1.getall( ).subscribe( data => {
+    console.log(data);
+    for(let dato in data){
+      console.log(dato);
+      let eqNuevo = data[dato];
+      eqNuevo.key = dato;
+      this.deportes.push(eqNuevo);
+    }
+    console.log(this.deportes);
+    console.log();
+ });
+}
+
+
+  
+    
 
   ngOnInit() {
+    
   }
 
 }
