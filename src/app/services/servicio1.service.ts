@@ -25,35 +25,36 @@ export class Servicio1Service {
   
   return this.http.post( this.urlFirebase, body, {headers} ).pipe(map( res => {
     console.log(res);
+    
     return res;
   }));
 }
 
 
 actualizar ( futbol: Futbol ,key:string) {
- let body = JSON.stringify( futbol);
- let headers = new HttpHeaders ({
-   'Content-Type': 'application/json'
- });
-
- return this.http.put( this.urlFirebase2+key+".json", body, {headers} ).pipe(map( res => {
-  console.log(res);
-  return res;
-}));
-
- 
-
-
-}
-
-
-borrar(futbol:Futbol){
-  //let body = JSON.stringify( futbol);
+  let body = JSON.stringify( futbol);
   let headers = new HttpHeaders ({
     'Content-Type': 'application/json'
   });
  
-  return this.http.delete( this.urlFirebase3, {headers} ).pipe(map( res => {
+  return this.http.put( this.urlFirebase2+key+'.json', body, {headers} ).pipe(map( res => {
+   console.log(res);
+  return res;
+ }));
+ 
+  
+ 
+ 
+ }
+
+
+borrar(futbol:Futbol, key:string){
+  let body = JSON.stringify( futbol);
+  let headers = new HttpHeaders ({
+    'Content-Type': 'application/json'
+  });
+ 
+  return this.http.delete( this.urlFirebase2+key+'.json', {headers} ).pipe(map( res => {
    console.log(res);
    return res;
  }));

@@ -9,10 +9,13 @@
     </thead>
     <tbody *ngFor="let de of deportes">
         <tr>
-            <button type="button" class="btn btn-primary" [routerLink]="['/2']">ir a registro</button>
             <td>{{de.anio}}</td>
             <td>{{de.key}}</td>
             <td>{{de.nombre}}</td>
+            <td>
+                <a [routerLink]="['/2',de.key]">Actualizar</a>
+            </td>
+
         </tr>
     </tbody>
 
