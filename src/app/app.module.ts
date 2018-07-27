@@ -25,3 +25,5 @@ import { HttpClientModule } from '@angular/common/http';
   
 })
 export class AppModule { }
+
+// 5)agregar el formsMODULE . HTTPCLIENT.

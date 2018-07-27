@@ -72,10 +72,18 @@ getall(){
    
    return res;
  }));
+}
 
-
-
-
+get(key:string){
+  let headers = new HttpHeaders ({
+    'Content-Type': 'application/json'
+  });
+ 
+  let url = this.urlFirebase2 + key + ".json"
+  return this.http.get( url, {headers} ).pipe(map( res => {
+   
+   return res;
+ }));
 
 }}
 

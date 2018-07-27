@@ -21,12 +21,16 @@ export class UnoComponent implements OnInit {
       console.log(dato);
       let eqNuevo = data[dato];
       eqNuevo.key = dato;
+    
       this.deportes.push(eqNuevo);
     }
    
     console.log(this.deportes);
     console.log();
  });
+
+
+ 
 }
 
 

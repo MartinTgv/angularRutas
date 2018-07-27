@@ -1,26 +1,39 @@
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">equipos-Nacionales</th>
-            <th scope="col">nombre</th>
-            <th scope="col">año</th>
-        </tr>
-
-    </thead>
-    <tbody *ngFor="let de of deportes">
-        <tr>
-            <td>{{de.anio}}</td>
-            <td>{{de.key}}</td>
-            <td>{{de.nombre}}</td>
-            <td>
-                <a [routerLink]="['/2',de.key]">Actualizar</a>
-            </td>
-
-        </tr>
-    </tbody>
+<div class="imagenfondo">
+    <div class="estilo">
+        <img width="1500" src="../../assets/img/AFA.jpg" alt="Responsive image">
 
 
 
+        <table class="table table-sm table-dark">
 
-    <button type="button" class="btn btn-primary" [routerLink]="['/2']">ir</button>
-</table>
+            <thead>
+                <tr>
+                    <th scope="col">nombre</th>
+                    <th scope="col">goles</th>
+                    <th scope="col">años</th>
+
+                </tr>
+            </thead>
+
+            <tbody *ngFor="let de of deportes">
+                <tr>
+                    <td>{{de.nombre}}</td>
+                    <td>{{de.goles}}</td>
+                    <td>{{de.anio}}</td>
+
+                    <td>
+                        <a [routerLink]="['/2',de.key]">Actualizar</a>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+
+
+        </table>
+
+
+    </div>
+</div>

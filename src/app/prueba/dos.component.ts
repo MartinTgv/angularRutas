@@ -17,7 +17,9 @@ export class DosComponent implements OnInit {
   
   deporte : Futbol = {
   nombre:'',
-   anio : 0
+   anio : 0,
+   goles: 0
+   
   };
 
   key:string;
@@ -41,6 +43,9 @@ constructor(private Martin1:Servicio1Service ,
   console.log ("hola estoy en el constructor");
   this.activarRuta.params.subscribe(parametros =>{
     this.key = parametros['key'];
+    this.Martin1.get(this.key).subscribe(data =>{
+      this.deporte = data as Futbol;
+    })
     console.log(this.key);
     
   })
@@ -58,7 +63,7 @@ actualizar(){
 
   borrar(){
     console.log(this.deporte.nombre);
-    this.Martin1.borrar( this.deporte, this.key).subscribe( data => {
+    this.Martin1.borrar( this.deporte,this.key).subscribe( data => {
       alert("borrado");
    
        

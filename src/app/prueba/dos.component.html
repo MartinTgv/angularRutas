@@ -1,24 +1,29 @@
-<form (ngSubmit)="guardar()" #martin="ngForm">
-    <div class="row">
-        <div class="col">
-            <input [(ngModel)]="deporte.nombre" name="nombre" required type="text" class="form-control" placeholder="First name">
-        </div>
-        <div class="col">
-            <input [(ngModel)]="deporte.anio" name="anio" required class="form-control" placeholder="Last name">
-        </div>
+<div class="imagenfondo">
+    <div>
+        <form (ngSubmit)="guardar()" #martin="ngForm">
+            <div class="row">
+                <div class="col">
+                    <input [(ngModel)]="deporte.nombre" name="nombre" required type="text" class="form-control" placeholder="Ingrese nombre de jugadores">
+
+                </div>
+                <div class="col">
+                    <input [(ngModel)]="deporte.anio" name="anio" required class="form-control" placeholder="Ingrese edad">
+                </div>
+
+
+
+
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">guardar</button>
+        </form>
+        <form (ngSubmit)="actualizar()" #martin2="ngForm">
+            <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">update</button>
+        </form>
+        <form (ngSubmit)="borrar()" #martin3="ngForm">
+            <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">borrar</button>
+        </form>
+
+
+        <button type="button" class="btn btn-primary" [routerLink]="['/1']">ir</button>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">guardar</button>
-</form>
-<form (ngSubmit)="actualizar()" #martin2="ngForm">
-    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">update</button>
-</form>
-<form (ngSubmit)="borrar()" #martin3="ngForm">
-    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">borrar</button>
-</form>
-
-<form (ngSubmit)="get1()" #martin4="ngForm">
-    <button type="submit" class="btn btn-primary" [disabled]="!martin.valid">get</button>
-</form>
-
-<button type="button" class="btn btn-primary" [routerLink]="['/1']">ir</button>
-<!–- disabled button ng model name -–>
+</div>
